@@ -1,0 +1,18 @@
+{
+    "name": "memo-init-org-profile",
+    "version": "1.0.0",
+    "description": "memo-init GitHub organization profile generator — renders profile/README.md from refs + BadgeTable",
+    "main": "index.mjs",
+    "type": "module",
+    "license": "MIT",
+    "engines": {
+        "node": ">=22"
+    },
+    "scripts": {
+        "fetch-refs": "node scripts/fetch-refs.mjs",
+        "start": "node index.mjs"
+    },
+    "dependencies": {
+        "badgetable": "^1.3.3"
+    }
+}
