@@ -1,0 +1,31 @@
+# memo-init
+
+memo-init is a memo-driven, agentic software-engineering system. Work begins with a dense memo
+that is iterated into a finalized plan before any code is written, then rolled out autonomously
+along a Generate → Execute → Evaluate loop. This organization is the inductive RFC specification
+of that system — the daily-productive memo toolkit written up as a public, standalone spec.
+Publication secures authorship of the approach. FlowMCP serves as the structural role model:
+an RFC-style spec, a generated org profile, a documentation site, and a small set of focused repos.
+
+[Documentation →](https://memo-init.github.io)
+
+## Choose your entry point
+
+- **[Newcomer](https://memo-init.github.io{{docs.entryPoints.newcomer}})** — Quickstart: what a memo is and how the loop runs.
+- **[Memo Author](https://memo-init.github.io{{docs.entryPoints.memoAuthor}})** — Specification overview — the SOP from input to rollout.
+- **[Tool Maintainer](https://memo-init.github.io{{docs.entryPoints.toolMaintainer}})** — Workbench sub-spec: project structure, requirements, tools.
+- **[Decision Maker](https://memo-init.github.io{{docs.entryPoints.decisionMaker}})** — Motivation, scope, and roadmap in a few minutes.
+
+## Repositories
+
+{{repos}}
+
+- **spec**: RFC-2119 specification of the memo system plus the Workbench sub-spec and the spec → docs → llms.txt generators (spec v{{spec.currentVersion}}).
+- **memo-init.github.io**: Astro + Starlight documentation website that serves the spec and `llms.txt`.
+- **viewer**: Memo viewer — local live-preview of memos and their revisions (core-like, direct spec dependency).
+- **prompt-generator**: Deterministic start-prompt compositor — template + typed placeholders → substituted prompt + metadata, no LLM call.
+- **core**: Skills (the working base) plus Agents — evaluators migrate first, skills remain the foundation.
+
+---
+
+License: MIT

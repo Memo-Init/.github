@@ -1,0 +1,47 @@
+name: Update README on Commit
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types:
+      - refs-updated
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      # TODO(bootstrap): the committed scripts/fetch-refs.mjs reads the LOCAL sibling
+      # spec repo (../spec/generated/refs.resolved.json). In CI the spec repo is not
+      # checked out alongside this one, so fetch-refs must read the published raw URL
+      # https://raw.githubusercontent.com/Memo-Init/spec/main/generated/refs.resolved.json
+      # instead. Swap the script to the remote-fetch variant before enabling this workflow.
+      - name: Fetch refs from Spec
+        run: npm run fetch-refs
+
+      - name: Run Node.js Script
+        run: node index.mjs
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add .
+          git commit -m "Update README" || echo "No changes to commit"
+          git push
