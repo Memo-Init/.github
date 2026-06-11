@@ -9,13 +9,6 @@ an RFC-style spec, a generated org profile, a documentation site, and a small se
 
 [Documentation →](https://memo-init.github.io)
 
-## Choose your entry point
-
-- **[Newcomer](https://memo-init.github.io{{docs.entryPoints.newcomer}})** — Quickstart: what a memo is and how the loop runs.
-- **[Memo Author](https://memo-init.github.io{{docs.entryPoints.memoAuthor}})** — Specification overview — the SOP from input to rollout.
-- **[Tool Maintainer](https://memo-init.github.io{{docs.entryPoints.toolMaintainer}})** — Workbench sub-spec: project structure, requirements, tools.
-- **[Decision Maker](https://memo-init.github.io{{docs.entryPoints.decisionMaker}})** — Motivation, scope, and roadmap in a few minutes.
-
 ## Repositories
 
 {{repos}}
@@ -24,7 +17,8 @@ an RFC-style spec, a generated org profile, a documentation site, and a small se
 - **memo-init.github.io**: Astro + Starlight documentation website that serves the spec and `llms.txt`.
 - **viewer**: Memo viewer — local live-preview of memos and their revisions (core-like, direct spec dependency).
 - **prompt-generator**: Deterministic start-prompt compositor — template + typed placeholders → substituted prompt + metadata, no LLM call.
-- **core**: Skills (the working base) plus Agents — evaluators migrate first, skills remain the foundation.
+
+<sub>Internals: [core](https://github.com/Memo-Init/core) (private)</sub>
 
 ---
 

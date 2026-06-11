@@ -7,7 +7,7 @@ const config = [
                 "title": "spec",
                 "githubUserName": "Memo-Init",
                 "githubRepository": "spec",
-                "githubWorkflowPath": "generate-refs.yml"
+                "githubWorkflowPath": "generate.yml"
             },
             {
                 "title": "memo-init.github.io",
@@ -25,12 +25,6 @@ const config = [
                 "title": "prompt-generator",
                 "githubUserName": "Memo-Init",
                 "githubRepository": "prompt-generator",
-                "githubWorkflowPath": "test-on-push.yml"
-            },
-            {
-                "title": "core",
-                "githubUserName": "Memo-Init",
-                "githubRepository": "core",
                 "githubWorkflowPath": "test-on-push.yml"
             }
         ]
