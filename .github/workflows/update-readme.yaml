@@ -19,6 +19,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Checkout Spec repo (source of refs)
+        uses: actions/checkout@v4
+        with:
+          repository: Memo-Init/spec
+          path: _spec
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -27,13 +33,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # TODO(bootstrap): the committed scripts/fetch-refs.mjs reads the LOCAL sibling
-      # spec repo (../spec/generated/refs.resolved.json). In CI the spec repo is not
-      # checked out alongside this one, so fetch-refs must read the published raw URL
-      # https://raw.githubusercontent.com/Memo-Init/spec/main/generated/refs.resolved.json
-      # instead. Swap the script to the remote-fetch variant before enabling this workflow.
       - name: Fetch refs from Spec
         run: npm run fetch-refs
+        env:
+          SPEC_REPO_DIR: ${{ github.workspace }}/_spec
 
       - name: Run Node.js Script
         run: node index.mjs
