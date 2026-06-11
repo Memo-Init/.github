@@ -1,7 +1,7 @@
 const config = [
     {
         'replace': '{{repos}}',
-        'preset': 'githubDetailsCodeCoverage',
+        'preset': 'githubDetails',
         'projects': [
             {
                 "title": "spec",
@@ -13,7 +13,7 @@ const config = [
                 "title": "memo-init.github.io",
                 "githubUserName": "Memo-Init",
                 "githubRepository": "memo-init.github.io",
-                "githubWorkflowPath": "test-on-push.yml"
+                "githubWorkflowPath": "deploy.yml"
             },
             {
                 "title": "viewer",
