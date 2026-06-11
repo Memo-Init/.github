@@ -1,6 +1,6 @@
 {
     "name": "memo-init-org-profile",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "memo-init GitHub organization profile generator — renders profile/README.md from refs + BadgeTable",
     "main": "index.mjs",
     "type": "module",
