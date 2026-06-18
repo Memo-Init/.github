@@ -25,7 +25,7 @@ an RFC-style spec, a generated org profile, a documentation site, and a small se
 - **viewer**: Memo viewer — local live-preview of memos and their revisions (core-like, direct spec dependency).
 - **prompt-generator**: Deterministic start-prompt compositor — template + typed placeholders → substituted prompt + metadata, no LLM call.
 
-<sub>Internals: [core](https://github.com/Memo-Init/core) (private)</sub>
+<sub>Internals: core (internal, private)</sub>
 
 ---
 

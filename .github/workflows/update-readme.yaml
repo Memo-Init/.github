@@ -45,6 +45,7 @@ jobs:
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          git add .
+          git pull --rebase origin main
+          git add profile/README.md
           git commit -m "Update README" || echo "No changes to commit"
           git push
