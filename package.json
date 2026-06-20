@@ -12,7 +12,5 @@
         "fetch-refs": "node scripts/fetch-refs.mjs",
         "start": "node index.mjs"
     },
-    "dependencies": {
-        "badgetable": "^1.3.3"
-    }
+    "dependencies": {}
 }

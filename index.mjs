@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { config } from './src/data/config.mjs'
-import { BadgeTable } from './node_modules/badgetable/src/BadgeTable.mjs'
+import { BadgeTable } from './vendor/badgetable/src/BadgeTable.mjs'
 import { replaceRefsPlaceholders } from './src/lib/placeholder-replace.mjs'
 
 
